@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "699262183368",
+    "project_id": "alsouk-elyoum",
+    "storage_bucket": "alsouk-elyoum.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699262183368:android:001a065a10bdbce9dd02fd",
+        "android_client_info": {
+          "package_name": "com.example.alsoukalyoum"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCnz5g1MM0bLd-o-d6XcJr2niL0DrzGrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
