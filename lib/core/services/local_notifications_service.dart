@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'dart:developer';
+import 'dart:convert';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-
+import 'package:http/http.dart' as http;
 
 class LocalNotificationService {
   static FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -31,24 +31,34 @@ class LocalNotificationService {
 
   //basic Notification
   static void showBasicNotification(RemoteMessage message) async {
+    final http.Response image = await http
+        .get(Uri.parse(message.notification?.android?.imageUrl ?? ''));
+    BigPictureStyleInformation bigPictureStyleInformation =
+        BigPictureStyleInformation(
+      ByteArrayAndroidBitmap.fromBase64String(
+        base64Encode(image.bodyBytes),
+      ),
+      largeIcon: ByteArrayAndroidBitmap.fromBase64String(
+        base64Encode(image.bodyBytes),
+      ),
+    );
     AndroidNotificationDetails android = AndroidNotificationDetails(
-        'id 1', 'basic notification',
-        importance: Importance.max,
-        priority: Priority.high,
+      'channel_id',
+      'channel_name',
+      importance: Importance.max,
+      priority: Priority.high,
+      styleInformation: bigPictureStyleInformation,
+   
+  
     );
     NotificationDetails details = NotificationDetails(
       android: android,
     );
     await flutterLocalNotificationsPlugin.show(
       0,
-     message.notification?.title,
-      
-     message.notification?.body,
+      message.notification?.title,
+      message.notification?.body,
       details,
- 
     );
   }
-
-  
 }
-

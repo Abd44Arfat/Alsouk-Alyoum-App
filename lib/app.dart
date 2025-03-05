@@ -1,4 +1,6 @@
 
+import 'package:alsoukalyoum/core/helper_fuctions/on_generate_routes.dart';
+import 'package:alsoukalyoum/features/main_view/views/main_view.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,9 +13,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
     
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  scaffoldBackgroundColor: Colors.black, // This sets the background color
+       
+        
+        
       ),
-     
+      debugShowCheckedModeBanner: false,
+      
+      initialRoute: MainView.routeName,
+     onGenerateRoute: onGenerateRoute,
     );
   }
 }
