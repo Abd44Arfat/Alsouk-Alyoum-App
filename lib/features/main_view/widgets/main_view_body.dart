@@ -1,3 +1,6 @@
+import 'package:alsoukalyoum/features/Gold/views/gold_view.dart';
+import 'package:alsoukalyoum/features/calculator/views/calculator_view.dart';
+import 'package:alsoukalyoum/features/curreny/views/currency_view.dart';
 import 'package:alsoukalyoum/features/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -16,9 +19,9 @@ class MainViewBody extends StatelessWidget {
       index: currentViewIndex,
       children: const [
         HomeView(),
-        Center( child: Text('data'),),
-        HomeView(),
-        HomeView(),
+       CurrencyView(),
+        GoldView(),
+        CalculatorView(),
 
        
       ],

@@ -2,10 +2,10 @@ import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CurrencyItem extends StatelessWidget {
+class GoldItem extends StatelessWidget {
 
 
-  const CurrencyItem({
+  const GoldItem({
     super.key,
    
   });
@@ -13,7 +13,7 @@ class CurrencyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:16,horizontal: 16 ),
+      padding: const EdgeInsets.symmetric(vertical:8,horizontal: 16), 
       child: Column(
         children: [
           Row(
@@ -26,8 +26,8 @@ class CurrencyItem extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
              child: ClipOval(
-              child: SvgPicture.asset(
-                'assets/images/Flags.svg',
+              child: Image.asset(
+                'assets/images/gold.png',
                 fit: BoxFit.cover, // This ensures the image covers the entire container
               )),
               ),
