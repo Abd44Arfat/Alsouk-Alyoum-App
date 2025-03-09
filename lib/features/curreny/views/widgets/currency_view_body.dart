@@ -76,7 +76,7 @@ class _CurrencyViewBodyState extends State<CurrencyViewBody> {
             ),
           ),
         ),
-        CurrencyList(), // Ensure this returns a SliverList
+        CurrencyList(currencies: [],), // Ensure this returns a SliverList
       ],
     );
   }

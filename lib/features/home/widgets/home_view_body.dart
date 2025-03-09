@@ -1,14 +1,30 @@
 import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
 import 'package:alsoukalyoum/core/widgets/custom_stack.dart';
+import 'package:alsoukalyoum/features/Gold/presentation/manager/gold_cubit/gold_cubit.dart';
+import 'package:alsoukalyoum/features/home/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:alsoukalyoum/features/home/widgets/custom_chart.dart';
 import 'package:alsoukalyoum/features/home/widgets/time_horizontal_list.dart';
 import 'package:alsoukalyoum/features/home/widgets/vertical_currency_list.dart';
+import 'package:alsoukalyoum/features/home/widgets/vertical_list_bloc_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
 
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+
+
+   void initState() {
+    super.initState();
+    // Fetch characters using the Bloc
+    context.read<HomeCubit>().getCurrencies();
+  }
   @override
   Widget build(BuildContext context) {
     return CustomStack(
@@ -58,10 +74,11 @@ class HomeViewBody extends StatelessWidget {
                 SliverToBoxAdapter(
               child: SizedBox(height: 20),
             ),
-            const VerticalCurrencyList(), // Use the corrected VerticalCurrencyList
+            VerticalListBlocBuilder(), // Use the corrected VerticalCurrencyList
           ],
         ),
       ),
     );
   }
 }
+

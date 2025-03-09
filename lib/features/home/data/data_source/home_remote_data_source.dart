@@ -18,7 +18,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   Future<List<TimeModel>> fetchTimeCurrency() async {
     try {
       // Await the response from the API
-      final response = await dioClient.get(ApiUrls.getGoldList);
+      final response = await dioClient.get(ApiUrls.getHomeList);
 
       
       if (response.statusCode == 200) {
