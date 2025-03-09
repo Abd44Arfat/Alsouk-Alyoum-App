@@ -3,7 +3,7 @@ import 'package:alsoukalyoum/features/calculator/views/calculator_view.dart';
 import 'package:alsoukalyoum/features/calculator/views/widgets/calculator_view_body.dart';
 import 'package:alsoukalyoum/features/curreny/views/currency_view.dart';
 import 'package:alsoukalyoum/features/curreny/views/widgets/currency_view_body.dart';
-import 'package:alsoukalyoum/features/home/views/home_view.dart';
+import 'package:alsoukalyoum/features/home/presentation/views/home_view.dart';
 import 'package:alsoukalyoum/features/main_view/views/main_view.dart';
 import 'package:alsoukalyoum/features/onboarding/views/onboarding_view.dart';
 import 'package:flutter/material.dart';

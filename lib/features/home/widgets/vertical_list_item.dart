@@ -1,12 +1,13 @@
 import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
+import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CurrencyItem extends StatelessWidget {
 
-
+final Currency currency;
   const CurrencyItem({
-    super.key,
+    super.key, required this.currency,
    
   });
 
@@ -27,7 +28,7 @@ class CurrencyItem extends StatelessWidget {
                 ),
              child: ClipOval(
               child: SvgPicture.asset(
-                'assets/images/Flags.svg',
+            currency.image  ,
                 fit: BoxFit.cover, // This ensures the image covers the entire container
               )),
               ),
@@ -38,12 +39,12 @@ class CurrencyItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'الريال السعودي',
+                     currency.name,
                       style: TextStyles.medium15.copyWith(color: Colors.white),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'زياده 1.90 ج.م',
+                    currency.rate.toString(),
                       style: TextStyles.regular13.copyWith(color: Colors.grey),
                     ),
                   ],
@@ -56,7 +57,7 @@ class CurrencyItem extends StatelessWidget {
                 SvgPicture.asset('assets/images/uparrow.svg'),
                    const SizedBox(width: 4),
                   Text(
-                    ' 15.90 ج.م',
+                    currency.rate.toString(),
                     style: TextStyles.medium15.copyWith(color: Colors.white),
                   ),
                  
