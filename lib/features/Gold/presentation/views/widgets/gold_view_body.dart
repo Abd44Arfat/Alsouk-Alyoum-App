@@ -1,4 +1,4 @@
-import 'package:alsoukalyoum/features/Gold/views/widgets/gold_list.dart';
+import 'package:alsoukalyoum/features/Gold/presentation/views/widgets/gold_list.dart';
 import 'package:flutter/material.dart';
 
 class GoldViewBody extends StatelessWidget {

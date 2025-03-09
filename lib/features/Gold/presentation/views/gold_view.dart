@@ -1,6 +1,6 @@
 import 'package:alsoukalyoum/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:alsoukalyoum/features/Gold/views/widgets/gold_view_body.dart';
+import 'package:alsoukalyoum/features/Gold/presentation/views/widgets/gold_view_body.dart';
 
 class GoldView extends StatefulWidget {
   const GoldView({super.key});

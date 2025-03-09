@@ -1,4 +1,4 @@
-import 'package:alsoukalyoum/features/Gold/views/widgets/gold_list_item.dart';
+import 'package:alsoukalyoum/features/Gold/presentation/views/widgets/gold_list_item.dart';
 
 import 'package:flutter/material.dart';
 
