@@ -1,4 +1,5 @@
 import 'package:alsoukalyoum/core/helper_fuctions/Api_services.dart';
+import 'package:alsoukalyoum/core/utils/constants.dart';
 import 'package:alsoukalyoum/features/Gold/data/models/gold_model.dart';
 import 'package:dio/dio.dart';
 
@@ -16,7 +17,7 @@ class GoldRemoteDataSourceImpl extends GoldRemoteDataSource {
   Future<List<Gold>> fetchGoldList() async {
     try {
       // Await the response from the API
-      final response = await dioClient.get('https://rickandmortyapi.com/api/character');
+      final response = await dioClient.get(ApiUrls.getGoldList);
 
       
       if (response.statusCode == 200) {

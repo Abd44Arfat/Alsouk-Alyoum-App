@@ -1,4 +1,5 @@
 import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
+import 'package:alsoukalyoum/features/Gold/data/models/gold_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -6,10 +7,10 @@ class GoldItem extends StatelessWidget {
 
 
   const GoldItem({
-    super.key,
+    super.key, required this.gold,
    
   });
-
+final Gold gold;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -38,12 +39,12 @@ class GoldItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'الريال السعودي',
+                     gold.name ,
                       style: TextStyles.medium15.copyWith(color: Colors.white),
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'زياده 1.90 ج.م',
+                    gold.sellingPrice.toString(),
                       style: TextStyles.regular13.copyWith(color: Colors.grey),
                     ),
                   ],
@@ -56,7 +57,7 @@ class GoldItem extends StatelessWidget {
                 SvgPicture.asset('assets/images/uparrow.svg'),
                    const SizedBox(width: 4),
                   Text(
-                    ' 15.90 ج.م',
+                   gold.purchasePrice.toString(),
                     style: TextStyles.medium15.copyWith(color: Colors.white),
                   ),
                  
