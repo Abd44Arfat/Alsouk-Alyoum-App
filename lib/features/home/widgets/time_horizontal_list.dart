@@ -3,10 +3,10 @@ import 'package:alsoukalyoum/features/home/presentation/manager/home_cubit/home_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'horizontal_list_item.dart'; // Adjust the import based on your file structure
-
 class TimeHorizontalList extends StatefulWidget {
   const TimeHorizontalList({super.key, required this.times});
-final List<TimeModel>times;
+  final List<TimeModel> times;
+
   @override
   _TimeHorizontalListState createState() => _TimeHorizontalListState();
 }
@@ -24,14 +24,16 @@ class _TimeHorizontalListState extends State<TimeHorizontalList> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              setState(() {
-                _selectedIndex = index; // Update selected index
-              });
+     
 
-       int selectedTimeId = widget.times[index].timeId;
-  debugPrint("Selected Time ID: $selectedTimeId");
-  
-  context.read<HomeCubit>().getCurrenciesList(currencyId: selectedTimeId);
+
+                setState(() {
+                  _selectedIndex = index; // Update selected index
+                });
+
+                // Call to filter currencies based on selected time ID
+   context.read<HomeCubit>().getCurrenciesList(currencyId: widget.times[index].timeId);
+            
             },
             child: HorizontalListItem(
               times: widget.times[index],

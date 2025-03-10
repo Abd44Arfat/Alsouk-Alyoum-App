@@ -25,7 +25,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     super.initState();
     // Fetch characters using the Bloc
     context.read<HomeCubit>().getCurrencies();
-    
   }
   @override
   Widget build(BuildContext context) {

@@ -22,7 +22,8 @@ final class TimeFailure extends HomeState {
 
 // Placeholder for additional states
 final class CurrenciesSuccess extends HomeState {
-  final List<Currency> currenciesList;
+
+ final List<Currency> currenciesList;
 
   CurrenciesSuccess({required this.currenciesList});
 }
