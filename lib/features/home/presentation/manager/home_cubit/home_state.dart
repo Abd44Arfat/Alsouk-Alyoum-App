@@ -1,32 +1,34 @@
-part of 'home_cubit.dart';
+import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
+import 'package:meta/meta.dart';
 
 @immutable
 sealed class HomeState {}
 
 final class HomeInitial extends HomeState {}
+
 final class TimeLoading extends HomeState {}
+
 final class TimeSuccess extends HomeState {
+  final List<TimeModel> specializationCurrencies;
 
-
-final List<TimeModel> times;
-
-  TimeSuccess({required this.times});
-
-  
-
+  TimeSuccess({required this.specializationCurrencies});
 }
-final class TimeFailure extends HomeState {
 
-final String errmessage;
+final class TimeFailure extends HomeState {
+  final String errmessage;
 
   TimeFailure({required this.errmessage});
-
 }
 
-//list of currencies
-final class CurrenciesSuccess extends HomeState {}
-final class CurrenciesFailure extends HomeState {}
+// Placeholder for additional states
+final class CurrenciesSuccess extends HomeState {
+  final List<Currency> currenciesList;
 
+  CurrenciesSuccess({required this.currenciesList});
+}
 
+final class CurrenciesFailure extends HomeState {
+  final String errmessage;
 
-
+  CurrenciesFailure({required this.errmessage});
+}

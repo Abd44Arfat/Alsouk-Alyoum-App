@@ -16,16 +16,20 @@ class HomeRepoImpl extends HomeRepo { // Fixed class name
   HomeRepoImpl({required this.homeRemoteDataSourceImpl});
 
   @override
-  Future<Either<Failure, List<TimeModel>>> getCurrenciesTime() async { // Made this method async
-    try {
-      // Call the fetchCharactersList method on the instance
-      final goldList = await homeRemoteDataSourceImpl.fetchTimeCurrency();
-      return right(goldList); // Return the successful response
-    } catch (e) {
-      if (e is DioError) {
-        return left(ServerFailure.fromDiorError(e)); // Handle DioError
-      }
-      return left(ServerFailure(e.toString())); // Handle other exceptions
+  @override
+Future<Either<Failure, TimeResponse>> getCurrenciesTime() async {
+  try {
+    final timeList = await homeRemoteDataSourceImpl.fetchTimeCurrency();
+
+    final timeResponse = TimeResponse(message: "Success", time: timeList);
+
+    return right(timeResponse);
+  } catch (e) {
+    if (e is DioError) {
+      return left(ServerFailure.fromDiorError(e)); 
     }
+    return left(ServerFailure(e.toString()));
   }
+}
+
 }

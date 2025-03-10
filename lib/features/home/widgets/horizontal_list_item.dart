@@ -1,14 +1,15 @@
 import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
+import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalListItem extends StatelessWidget {
-  final String title; // Title parameter
-  final bool selected; // Selected status parameter
 
+  final bool selected; // Selected status parameter
+final TimeModel times;
   const HorizontalListItem({
     super.key,
-    required this.title,
-    required this.selected, // Update the constructor
+
+    required this.selected, required this.times, // Update the constructor
   });
 
   @override
@@ -23,7 +24,7 @@ class HorizontalListItem extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            title, // Use the title parameter
+            times.name, // Use the title parameter
             style: TextStyles.regular13.copyWith(
               color: selected ? Colors.black : Colors.white, // Change text color based on selected status
             ),

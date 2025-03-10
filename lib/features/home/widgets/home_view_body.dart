@@ -3,6 +3,7 @@ import 'package:alsoukalyoum/core/widgets/custom_stack.dart';
 import 'package:alsoukalyoum/features/Gold/presentation/manager/gold_cubit/gold_cubit.dart';
 import 'package:alsoukalyoum/features/home/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:alsoukalyoum/features/home/widgets/custom_chart.dart';
+import 'package:alsoukalyoum/features/home/widgets/horizontal_list_bloc_builder.dart';
 import 'package:alsoukalyoum/features/home/widgets/time_horizontal_list.dart';
 import 'package:alsoukalyoum/features/home/widgets/vertical_currency_list.dart';
 import 'package:alsoukalyoum/features/home/widgets/vertical_list_bloc_builder.dart';
@@ -24,6 +25,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     super.initState();
     // Fetch characters using the Bloc
     context.read<HomeCubit>().getCurrencies();
+    
   }
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               child: SizedBox(height: 20),
             ),
             SliverToBoxAdapter(
-              child: TimeHorizontalList(),
+              child: HorizontalListBlocBuilder(),
             ),
             SliverToBoxAdapter(
               child: SizedBox(height: 20),
@@ -81,4 +83,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
+
+
 

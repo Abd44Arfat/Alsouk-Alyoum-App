@@ -1,9 +1,10 @@
+import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
 import 'package:flutter/material.dart';
 import 'horizontal_list_item.dart'; // Adjust the import based on your file structure
 
 class TimeHorizontalList extends StatefulWidget {
-  const TimeHorizontalList({super.key});
-
+  const TimeHorizontalList({super.key, required this.times});
+final List<TimeModel>times;
   @override
   _TimeHorizontalListState createState() => _TimeHorizontalListState();
 }
@@ -13,14 +14,7 @@ class _TimeHorizontalListState extends State<TimeHorizontalList> {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> titles = [
-      'اخر ساعة',
-      '24 ساعة',
-      '48 ساعة',
-      '7 أيام',
-      '14 يوم',
-      '30 يوم',
-    ]; // List of different titles
+
 
     return SizedBox(
       height: 40, // Set a fixed height for the horizontal list
@@ -33,12 +27,12 @@ class _TimeHorizontalListState extends State<TimeHorizontalList> {
               });
             },
             child: HorizontalListItem(
-              title: titles[index], // Pass the title
+              times:  widget.times[index], // Pass the title
               selected: _selectedIndex == index, // Check if this item is selected
             ),
           );
         },
-        itemCount: titles.length, // Use the length of the titles list
+        itemCount: widget.times.length, // Use the length of the titles list
         scrollDirection: Axis.horizontal,
       ),
     );
