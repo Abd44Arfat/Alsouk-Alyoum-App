@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CurrencyItem extends StatelessWidget {
-  final TimeModel currencyTime; // Renamed for clarity
+  final Currency currencyTime; // Renamed for clarity
 
   const CurrencyItem({
     super.key,
@@ -17,7 +17,7 @@ class CurrencyItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       child: Column(
         children: [
-          for (var currency in currencyTime.currencies) // Loop through currencies
+          // for (var currency in currencyTime.) // Loop through currencies
             Column(
               children: [
                 Row(
@@ -30,7 +30,7 @@ class CurrencyItem extends StatelessWidget {
                       ),
                       child: ClipOval(
                         child: SvgPicture.network(
-                          currency.image, // Correctly passing currency image
+                          currencyTime.image, // Correctly passing currencyTime image
                           fit: BoxFit.cover, // This ensures the image covers the entire container
                         ),
                       ),
@@ -41,12 +41,12 @@ class CurrencyItem extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            currency.name, // Correctly displaying currency name
+                            currencyTime.name, // Correctly displaying currencyTime name
                             style: TextStyles.medium15.copyWith(color: Colors.white),
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            currency.rate.toString(), // Displaying currency rate
+                            currencyTime.rate.toString(), // Displaying currencyTime rate
                             style: TextStyles.regular13.copyWith(color: Colors.grey),
                           ),
                         ],
@@ -58,7 +58,7 @@ class CurrencyItem extends StatelessWidget {
                         SvgPicture.asset('assets/images/uparrow.svg'),
                         const SizedBox(width: 4),
                         Text(
-                          currency.rate.toString(),
+                          currencyTime.rate.toString(),
                           style: TextStyles.medium15.copyWith(color: Colors.white),
                         ),
                       ],

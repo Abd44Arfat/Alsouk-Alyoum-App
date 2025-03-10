@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class VerticalCurrencyList extends StatelessWidget {
   const VerticalCurrencyList({super.key, required this.currencies});
 
-  final List<TimeModel> currencies;
+  final List<Currency> currencies;
 
   @override
   Widget build(BuildContext context) {

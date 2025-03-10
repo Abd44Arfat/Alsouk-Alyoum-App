@@ -10,23 +10,27 @@ class VerticalListBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
-      builder: (context, state) {
-        if (state is TimeSuccess) {
-          return VerticalCurrencyList(currencies: state.specializationCurrencies);
-        } else if (state is TimeFailure) {
-          return const SliverToBoxAdapter(
-            child: Center(
-              child: Text('Failed to fetch times'),
-            ),
-          );
-        } else {
-          return const SliverToBoxAdapter(
-            child: Center(
-              child: CircularProgressIndicator(), // Better loading indicator
-            ),
-          );
-        }
-      },
-    );
+  builder: (context, state) {
+    if (state is CurrenciesSuccess) {
+      debugPrint("Currencies Updated: ${state.currenciesList.length}");
+      return VerticalCurrencyList(currencies: state.currenciesList);
+    } else if (state is CurrenciesFailure) {
+      return const SliverToBoxAdapter(
+        child: Center(
+          child: Text('No currencies found for the selected time'),
+        ),
+      );
+    } else if (state is TimeLoading) { // Ensure you handle loading properly
+      return const SliverToBoxAdapter(
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+    return const SliverToBoxAdapter(); // Default empty state
+  },
+);
+
+
   }
 }

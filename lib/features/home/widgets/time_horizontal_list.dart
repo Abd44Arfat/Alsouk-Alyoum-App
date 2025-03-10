@@ -1,5 +1,7 @@
 import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
+import 'package:alsoukalyoum/features/home/presentation/manager/home_cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'horizontal_list_item.dart'; // Adjust the import based on your file structure
 
 class TimeHorizontalList extends StatefulWidget {
@@ -10,30 +12,33 @@ final List<TimeModel>times;
 }
 
 class _TimeHorizontalListState extends State<TimeHorizontalList> {
-  int _selectedIndex = 0; // Default selected index (first item)
+  int _selectedIndex = 0; // Default selection
 
   @override
   Widget build(BuildContext context) {
-
-
     return SizedBox(
-      height: 40, // Set a fixed height for the horizontal list
+      height: 40,
       child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: widget.times.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
               setState(() {
-                _selectedIndex = index; // Update the selected index
+                _selectedIndex = index; // Update selected index
               });
+
+       int selectedTimeId = widget.times[index].timeId;
+  debugPrint("Selected Time ID: $selectedTimeId");
+  
+  context.read<HomeCubit>().getCurrenciesList(currencyId: selectedTimeId);
             },
             child: HorizontalListItem(
-              times:  widget.times[index], // Pass the title
-              selected: _selectedIndex == index, // Check if this item is selected
+              times: widget.times[index],
+              selected: _selectedIndex == index,
             ),
           );
         },
-        itemCount: widget.times.length, // Use the length of the titles list
-        scrollDirection: Axis.horizontal,
       ),
     );
   }
