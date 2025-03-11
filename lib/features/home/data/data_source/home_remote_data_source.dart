@@ -7,6 +7,8 @@ import 'package:dio/dio.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<TimeModel>> fetchTimeCurrency(); // Fixed method name
+  Future<List<Currency>> fetchAllCurrency(); // Fixed method name
+
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -36,6 +38,31 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     List<TimeModel> Currencies = []; 
     for (var curenciesMap in data['time']) {
       Currencies.add(TimeModel.fromMap(curenciesMap)); 
+    }
+    return Currencies;
+  }
+  
+  @override
+  Future<List<Currency>> fetchAllCurrency()async {
+   try {
+      // Await the response from the API
+      final response = await dioClient.get(ApiUrls.getAllCurrencies);
+
+      
+      if (response.statusCode == 200) {
+        
+        return getAllcurrencies(response.data); 
+      } else {
+        throw Exception('Failed to load Golds');
+      }
+    } catch (e) {
+      throw Exception('Error fetching Golds: $e'); 
+    }
+  }
+    List<Currency> getAllcurrencies(Map<String, dynamic> data) {
+    List<Currency> Currencies = []; 
+    for (var curenciesMap in data['currencies']) {
+      Currencies.add(Currency.fromMap(curenciesMap)); 
     }
     return Currencies;
   }

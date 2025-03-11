@@ -7,5 +7,6 @@ import 'package:dartz/dartz.dart';
 abstract class HomeRepo{
 
   Future<Either<Failure, TimeResponse>> getCurrenciesTime();
+  Future<Either<Failure, List<Currency>>> getAllCurrencies();
 
 }

@@ -32,4 +32,18 @@ Future<Either<Failure, TimeResponse>> getCurrenciesTime() async {
   }
 }
 
+  @override
+  Future<Either<Failure, List<Currency>>> getAllCurrencies()async {
+     try {
+    final timeList = await homeRemoteDataSourceImpl.fetchAllCurrency();
+
+
+    return right(timeList);
+  } catch (e) {
+    if (e is DioError) {
+      return left(ServerFailure.fromDiorError(e)); 
+    }
+    return left(ServerFailure(e.toString()));
+  }
+  }
 }

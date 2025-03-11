@@ -1,12 +1,13 @@
 import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
+import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CurrencyItem extends StatelessWidget {
 
-
+final Currency currency;
   const CurrencyItem({
-    super.key,
+    super.key, required this.currency,
    
   });
 
@@ -38,7 +39,7 @@ class CurrencyItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'الريال السعودي',
+                     currency.name,
                       style: TextStyles.medium15.copyWith(color: Colors.white),
                     ),
                     const SizedBox(height: 4),

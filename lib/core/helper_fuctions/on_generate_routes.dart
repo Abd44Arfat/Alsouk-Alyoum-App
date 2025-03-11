@@ -1,8 +1,8 @@
 import 'package:alsoukalyoum/features/Gold/presentation/views/gold_view.dart';
 import 'package:alsoukalyoum/features/calculator/views/calculator_view.dart';
 import 'package:alsoukalyoum/features/calculator/views/widgets/calculator_view_body.dart';
-import 'package:alsoukalyoum/features/curreny/views/currency_view.dart';
-import 'package:alsoukalyoum/features/curreny/views/widgets/currency_view_body.dart';
+import 'package:alsoukalyoum/features/curreny/presentation/views/currency_view.dart';
+import 'package:alsoukalyoum/features/curreny/presentation/views/widgets/currency_view_body.dart';
 import 'package:alsoukalyoum/features/home/presentation/views/home_view.dart';
 import 'package:alsoukalyoum/features/main_view/views/main_view.dart';
 import 'package:alsoukalyoum/features/onboarding/views/onboarding_view.dart';

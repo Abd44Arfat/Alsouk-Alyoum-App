@@ -1,5 +1,5 @@
+import 'package:alsoukalyoum/features/curreny/presentation/views/widgets/currrency_list_item.dart';
 import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
-import 'package:alsoukalyoum/features/home/widgets/vertical_list_item.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyList extends StatelessWidget {
@@ -12,7 +12,7 @@ class CurrencyList extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return CurrencyItem(currencyTime: currencies[index]); // Pass the correct parameter
+          return CurrencyItem(currency: currencies[index]); // Pass the correct parameter
         },
         childCount: currencies.length, // Number of items in the list
       ),

@@ -8,6 +8,7 @@ class ApiUrls {
 
   static const getGoldList = "$baseURL/api/golds";
   static const getHomeList = "$baseURL/api/times";
+  static const getAllCurrencies = "$baseURL/api/currencies";
  
 }
 String fixImageUrl(String url) {

@@ -1,8 +1,10 @@
 import 'package:alsoukalyoum/core/utils/app_colors.dart';
 import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
+import 'package:alsoukalyoum/features/curreny/presentation/manager/all_currencies/allcurrencyies_cubit.dart';
+import 'package:alsoukalyoum/features/curreny/presentation/views/widgets/all_currencies_bloc_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'currency_list.dart'; // Import your CurrencyList widget
 
 class CurrencyViewBody extends StatefulWidget {
   const CurrencyViewBody({Key? key}) : super(key: key);
@@ -23,6 +25,9 @@ class _CurrencyViewBodyState extends State<CurrencyViewBody> {
         _isVisible = _scrollController.offset < 100; // Adjust threshold as needed
       });
     });
+
+         context.read<AllcurrencyiesCubit>().getAllCurrencies();
+
   }
 
   @override
@@ -76,7 +81,7 @@ class _CurrencyViewBodyState extends State<CurrencyViewBody> {
             ),
           ),
         ),
-        CurrencyList(currencies: [],), // Ensure this returns a SliverList
+        AllCurrenciesBlocBuilder(), // Ensure this returns a SliverList
       ],
     );
   }
