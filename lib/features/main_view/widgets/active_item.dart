@@ -19,7 +19,7 @@ class ActiveItem extends StatelessWidget {
             color: Colors.transparent,
             child: SvgPicture.asset(image,colorFilter : ColorFilter.mode(Colors.blue, BlendMode.srcIn),),
           ),
-          Text(text,),
+          Text(text,style:TextStyles.regular13.copyWith(color: Colors.blue),),
         ],
       ),
     );
@@ -42,9 +42,9 @@ class InActiveItem extends StatelessWidget {
         children: [
           Container(
             color: Colors.transparent,
-            child: SvgPicture.asset(image),
+            child: SvgPicture.asset(image,color: Colors.white,),
           ),
-          Text(text)
+          Text(text,style: TextStyles.regular13.copyWith(color: Colors.white),)
         ],
       ),
     );

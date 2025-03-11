@@ -50,7 +50,7 @@ class CurrencyItem extends StatelessWidget {
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            currencyTime.rate.toString(), // Displaying currencyTimeTime rate
+                      'زياده ${currencyTime.rate} ج.م',
                             style: TextStyles.regular13.copyWith(color: Colors.grey),
                           ),
                         ],
@@ -62,8 +62,8 @@ class CurrencyItem extends StatelessWidget {
                         SvgPicture.asset('assets/images/uparrow.svg'),
                         const SizedBox(width: 4),
                         Text(
-                          currencyTime.rate.toString(),
-                          style: TextStyles.medium15.copyWith(color: Colors.white),
+  ' ${currencyTime.rate} ج.م',
+                            style: TextStyles.medium15.copyWith(color: Colors.white),
                         ),
                       ],
                     ),

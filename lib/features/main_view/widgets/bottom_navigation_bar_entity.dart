@@ -15,15 +15,15 @@ List<BottomNavigationBarEntity> get bottomNavigationBarItems => [
           inActiveImage: 'assets/images/home.svg',
           name: 'الرئيسية'),
       BottomNavigationBarEntity(
-          activeImage: 'assets/images/home.svg',
-          inActiveImage:'assets/images/home.svg',
-          name: 'المنتجات'),
+          activeImage: 'assets/images/ticket.svg',
+          inActiveImage:'assets/images/ticket.svg',
+          name: 'العملات'),
       BottomNavigationBarEntity(
-          activeImage: 'assets/images/home.svg',
-          inActiveImage:'assets/images/home.svg',
-          name: 'سلة التسوق'),
+          activeImage: 'assets/images/layer.svg',
+          inActiveImage:'assets/images/layer.svg',
+          name: 'الذهب'),
       BottomNavigationBarEntity(
-          activeImage:'assets/images/home.svg',
-          inActiveImage: 'assets/images/home.svg',
-          name: 'حسابي'),
+          activeImage:'assets/images/calculator.svg',
+          inActiveImage: 'assets/images/calculator.svg',
+          name: 'الحاسبه'),
     ];

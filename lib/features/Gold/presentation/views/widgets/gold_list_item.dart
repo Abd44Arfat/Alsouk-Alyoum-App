@@ -43,27 +43,32 @@ final Gold gold;
                       style: TextStyles.medium15.copyWith(color: Colors.white),
                     ),
                     const SizedBox(height: 4),
-                    Text(
-                    gold.sellingPrice.toString(),
-                      style: TextStyles.regular13.copyWith(color: Colors.grey),
+                    Row(
+                      children: [
+                        Text(
+                        'شراء  ' ,
+                          style: TextStyles.regular13.copyWith(color: Colors.grey),
+                        ),
+                        Text(
+                       gold.purchasePrice.toString(),
+                          style: TextStyles.medium15.copyWith(color: Colors.white),
+                        ),
+                 const      SizedBox(width:30 ,),
+                         Text(
+                        'بيع  ' ,
+                          style: TextStyles.regular13.copyWith(color: Colors.grey),
+                        ),
+                        Text(
+                       gold.sellingPrice.toString(),
+                          style: TextStyles.medium15.copyWith(color: Colors.white),
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
  
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                SvgPicture.asset('assets/images/uparrow.svg'),
-                   const SizedBox(width: 4),
-                  Text(
-                   gold.purchasePrice.toString(),
-                    style: TextStyles.medium15.copyWith(color: Colors.white),
-                  ),
-                 
-                 
-                ],
-              ),
+             
           
              
             ],

@@ -1,4 +1,5 @@
 import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
+import 'package:alsoukalyoum/core/utils/constants.dart';
 import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,7 +15,7 @@ final Currency currency;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:8 ),
+      padding: const EdgeInsets.symmetric(vertical:10 ,horizontal: 20),
       child: Column(
         children: [
           Row(
@@ -27,10 +28,11 @@ final Currency currency;
                   shape: BoxShape.circle,
                 ),
              child: ClipOval(
-              child: SvgPicture.asset(
-                'assets/images/Flags.svg',
-                fit: BoxFit.cover, // This ensures the image covers the entire container
-              )),
+              child:SvgPicture.network(
+                fit: BoxFit.cover,
+                fixImageUrl(currency.image,
+                        
+                        ),))
               ),
             SizedBox(width: 10),
            
@@ -44,7 +46,7 @@ final Currency currency;
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'زياده 1.90 ج.م',
+                      'زياده ${currency.rate} ج.م',
                       style: TextStyles.regular13.copyWith(color: Colors.grey),
                     ),
                   ],
@@ -57,8 +59,8 @@ final Currency currency;
                 SvgPicture.asset('assets/images/uparrow.svg'),
                    const SizedBox(width: 4),
                   Text(
-                    ' 15.90 ج.م',
-                    style: TextStyles.medium15.copyWith(color: Colors.white),
+  ' ${currency.rate} ج.م',
+                      style: TextStyles.medium15.copyWith(color: Colors.white),
                   ),
                  
                  

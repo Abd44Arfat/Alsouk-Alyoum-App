@@ -38,7 +38,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: Text(
-                  '1 دولار = 56 ج .م',
+                  '1 دولار = 50.60 ج .م',
                   style: TextStyles.bold32.copyWith(color: Colors.white),
                 ),
               ),
