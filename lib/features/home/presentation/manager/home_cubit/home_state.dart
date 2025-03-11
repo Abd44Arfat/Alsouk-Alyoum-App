@@ -5,7 +5,6 @@ sealed class HomeState {}
 
 final class HomeInitial extends HomeState {}
 
-final class TimeLoading extends HomeState {}
 
 final class TimeSuccess extends HomeState {
   final List<TimeModel> times;

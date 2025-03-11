@@ -15,7 +15,6 @@ class HomeCubit extends Cubit<HomeState> {
   List<Currency> filteredCurrencies = [];
 
   Future<void> getCurrencies() async {
-    emit(TimeLoading()); // Emit loading state
 
     final result = await homeRepo.getCurrenciesTime();
 

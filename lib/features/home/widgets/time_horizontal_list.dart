@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'horizontal_list_item.dart'; 
 
+
+
+// Adjust the import based on your file structure
 class TimeHorizontalList extends StatefulWidget {
   const TimeHorizontalList({super.key, required this.times});
-
   final List<TimeModel> times;
 
   @override
@@ -18,27 +20,27 @@ class _TimeHorizontalListState extends State<TimeHorizontalList> {
 
   @override
   Widget build(BuildContext context) {
-    // Debug log to verify the timesList
-    debugPrint('Times List in UI: ${widget.times.map((e) => e.toJson()).toList()}');
-
     return SizedBox(
       height: 40,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.times.length,
         itemBuilder: (context, index) {
-          final time = widget.times[index];
           return GestureDetector(
             onTap: () {
-              setState(() {
-                _selectedIndex = index; // Update selected index
-              });
+     
 
-              // Call to filter currencies based on selected time ID
-              context.read<HomeCubit>().getCurrenciesList(currencyId: time.timeId);
+
+                setState(() {
+                  _selectedIndex = index; // Update selected index
+                });
+
+                // Call to filter currencies based on selected time ID
+   context.read<HomeCubit>().getCurrenciesList(currencyId: widget.times[index].timeId);
+            
             },
             child: HorizontalListItem(
-              time: time,
+              times: widget.times[index],
               selected: _selectedIndex == index,
             ),
           );
