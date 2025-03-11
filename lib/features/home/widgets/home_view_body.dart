@@ -10,7 +10,6 @@ import 'package:alsoukalyoum/features/home/widgets/vertical_list_bloc_builder.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
 
@@ -19,13 +18,12 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
-
-
-   void initState() {
+  @override
+  void initState() {
     super.initState();
-    // Fetch characters using the Bloc
     context.read<HomeCubit>().getCurrencies();
   }
+
   @override
   Widget build(BuildContext context) {
     return CustomStack(
@@ -68,11 +66,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             SliverToBoxAdapter(
               child: SizedBox(height: 20),
             ),
-                  SliverToBoxAdapter(
-              child: Text('اسعار العملات المتداوله',style: TextStyles.medium20.copyWith(color: Colors.white),),
-              
+            SliverToBoxAdapter(
+              child: Text('اسعار العملات المتداوله', style: TextStyles.medium20.copyWith(color: Colors.white)),
             ),
-                SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: SizedBox(height: 20),
             ),
             VerticalListBlocBuilder(), // Use the corrected VerticalCurrencyList
@@ -82,6 +79,3 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
-
-
-

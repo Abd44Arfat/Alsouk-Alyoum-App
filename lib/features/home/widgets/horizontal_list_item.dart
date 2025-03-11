@@ -3,31 +3,33 @@ import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalListItem extends StatelessWidget {
-
-  final bool selected; // Selected status parameter
-final TimeModel times;
   const HorizontalListItem({
     super.key,
-
-    required this.selected, required this.times, // Update the constructor
+    required this.time,
+    required this.selected,
   });
+
+  final TimeModel time;
+  final bool selected;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5),
-      child: Container(
-        width: 80, // Set a fixed width for each item
-        decoration: BoxDecoration(
-          color: selected ? Colors.white : const Color(0xff001019), // Change background based on selected status
-          borderRadius: BorderRadius.circular(10), // Rounded corners
-        ),
-        child: Center(
-          child: Text(
-            times.name, // Use the title parameter
-            style: TextStyles.regular13.copyWith(
-              color: selected ? Colors.black : Colors.white, // Change text color based on selected status
-            ),
+    // Debug log to verify each time item
+    debugPrint('Time Item: ${time.toJson()}');
+
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: selected ? Colors.blue : Colors.grey[300],
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Center(
+        child: Text(
+          time.name, // Display the time name
+          style: TextStyle(
+            color: selected ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

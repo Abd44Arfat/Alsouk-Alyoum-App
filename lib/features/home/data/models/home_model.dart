@@ -27,6 +27,7 @@ class TimeModel {
     required this.name,
     required this.currencies,
   });
+  
 
   // Convert JSON to TimeModel object
   factory TimeModel.fromMap(Map<String, dynamic> json) => TimeModel(
@@ -35,7 +36,16 @@ class TimeModel {
         name: json["name"],
         currencies: List<Currency>.from(json["currencies"].map((x) => Currency.fromMap(x))),
       );
+        Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'timeId': timeId,
+      'name': name,
+      'currencies': currencies.map((e) => e.toJson()).toList(),
+    };
+  }
 }
+
 
 class Currency {
   final String id;
@@ -49,6 +59,14 @@ class Currency {
     required this.image,
     required this.rate,
   });
+
+   Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+  
+    };
+  }
 
   // Convert JSON to Currency object
   factory Currency.fromMap(Map<String, dynamic> json) => Currency(

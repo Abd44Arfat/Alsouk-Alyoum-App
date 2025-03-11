@@ -17,24 +17,24 @@ class CurrencyItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       child: Column(
         children: [
-          // for (var currency in currencyTime.) // Loop through currencies
+          // for (var currency in currencyTime.currencies) // Loop through currencies
             Column(
               children: [
                 Row(
                   children: [
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: ClipOval(
-                        child: SvgPicture.network(
-                          currencyTime.image, // Correctly passing currencyTime image
-                          fit: BoxFit.cover, // This ensures the image covers the entire container
-                        ),
-                      ),
-                    ),
+                    // Container(
+                    //   width: 40,
+                    //   height: 40,
+                    //   decoration: const BoxDecoration(
+                    //     shape: BoxShape.circle,
+                    //   ),
+                    //   // child: ClipOval(
+                    //   //   child: SvgPicture.network(
+                    //   //     currencyTime.image, // Correctly passing currencyTime image
+                    //   //     fit: BoxFit.cover, // This ensures the image covers the entire container
+                    //   //   ),
+                    //   // ),
+                    // ),
                     const SizedBox(width: 10),
                     Expanded(
                       child: Column(
@@ -46,7 +46,7 @@ class CurrencyItem extends StatelessWidget {
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            currencyTime.rate.toString(), // Displaying currencyTime rate
+                            currencyTime.rate.toString(), // Displaying currencyTimeTime rate
                             style: TextStyles.regular13.copyWith(color: Colors.grey),
                           ),
                         ],
