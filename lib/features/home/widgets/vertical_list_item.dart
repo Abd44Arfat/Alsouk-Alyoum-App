@@ -1,4 +1,5 @@
 import 'package:alsoukalyoum/core/utils/app_text_styles.dart';
+import 'package:alsoukalyoum/core/utils/constants.dart';
 import 'package:alsoukalyoum/features/home/data/models/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,19 +23,22 @@ class CurrencyItem extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    // Container(
-                    //   width: 40,
-                    //   height: 40,
-                    //   decoration: const BoxDecoration(
-                    //     shape: BoxShape.circle,
-                    //   ),
-                    //   // child: ClipOval(
-                    //   //   child: SvgPicture.network(
-                    //   //     currencyTime.image, // Correctly passing currencyTime image
-                    //   //     fit: BoxFit.cover, // This ensures the image covers the entire container
-                    //   //   ),
-                    //   // ),
-                    // ),
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: ClipOval(
+                        child: SvgPicture.network(fixImageUrl(currencyTime.image,
+                        
+                        ),
+                        
+                        fit: BoxFit.cover,
+                        )
+
+                      ),
+                    ),
                     const SizedBox(width: 10),
                     Expanded(
                       child: Column(

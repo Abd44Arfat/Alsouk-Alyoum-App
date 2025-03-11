@@ -10,3 +10,6 @@ class ApiUrls {
   static const getHomeList = "$baseURL/api/times";
  
 }
+String fixImageUrl(String url) {
+  return url.replaceAll("http://localhost:3000", "http://192.168.1.10:3000");
+}
